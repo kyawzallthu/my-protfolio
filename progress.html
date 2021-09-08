@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--  Meta  -->
+    <meta charset="UTF-8" />
+    <title>My New Pen!</title>
+
+    <!--  Styles  -->
+    <!-- <link rel="stylesheet" href="styles/index.processed.css"> -->
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        .progressbar {
+            display: inline-block;
+            width: 100px;
+            margin: 25px;
+        }
+
+        .circle {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 10px;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+        }
+
+        .circle canvas {
+            vertical-align: middle;
+        }
+
+        .circle div {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+        }
+
+        .circle strong i {
+            font-style: normal;
+            font-size: 0.6em;
+            font-weight: normal;
+        }
+
+        .circle span {
+            display: block;
+            color: #aaa;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin:auto;text-align:center;color:skyblue;">Circle Progressbar When Scroll</h1>
+    <div style="width:100%;height:800px;">↓ Scroll down ↓</div>
+
+    <h3>Title (Placeholder)</h3>
+
+    <div class="progressbar" data-animate="false">
+        <div class="circle red" data-percent="100">
+            <div></div>
+            <p>Testing</p>
+        </div>
+    </div>
+    <div class="progressbar" data-animate="false">
+        <div class="circle gold" data-percent="20.98">
+            <div></div>
+            <p>TestingI</p>
+        </div>
+    </div>
+    <div class="progressbar" data-animate="false">
+        <div class="circle blue" data-percent="77">
+            <div></div>
+            <p>Testing</p>
+        </div>
+    </div>
+    <div class="progressbar" data-animate="false">
+        <div class="circle pink" data-percent="49">
+            <div></div>
+            <p>Testing</p>
+        </div>
+    </div>
+    <div style="width:100%;height:500px;"></div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <script src="vendor/bootstrap/js/jquery.js"></script>
+    <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.1/dist/circle-progress.js"></script>
+    <!-- <script src="scripts/index.js"></script> -->
+
+    <script>
+        console.log("JavaScript is amazing!");
+        $(document).ready(function ($) {
+            function animateElements() {
+                $('.progressbar').each(function () {
+                    var elementPos = $(this).offset().top;
+                    var topOfWindow = $(window).scrollTop();
+                    var percent = $(this).find('.circle').attr('data-percent');
+                    var percentage = parseInt(percent, 10) / parseInt(100, 10);
+                    var animate = $(this).data('animate');
+                    
+                    if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
+                        $(this).data('animate', true);
+
+                        $(this).find('.red').circleProgress({ 
+                            startAngle: -Math.PI / 2,
+                            value: percent / 100,
+                            thickness: 5,
+                            size: 150,
+                            fill: { 
+                                    color: 'red'
+                                 
+                            }
+                        }).on('circle-animation-progress', function (event, progress, stepValue) {
+                            $(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                        }).stop();
+
+                        $(this).find('.gold').circleProgress({ 
+                            startAngle: -Math.PI / 2,
+                            value: percent / 100,
+                            thickness: 5,
+                            size: 150,
+                            fill: { 
+                                    color: 'gold'
+                                 
+                            }
+                        }).on('circle-animation-progress', function (event, progress, stepValue) {
+                            $(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                        }).stop();
+
+                        $(this).find('.pink').circleProgress({ 
+                            startAngle: -Math.PI / 2,
+                            value: percent / 100,
+                            thickness: 5,
+                            size: 150,
+                            fill: { 
+                                    color: 'pink'
+                                 
+                            }
+                        }).on('circle-animation-progress', function (event, progress, stepValue) {
+                            $(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                        }).stop();
+
+                        $(this).find('.blue').circleProgress({ 
+                            startAngle: -Math.PI / 2,
+                            value: percent / 100,
+                            thickness: 5,
+                            size: 150,
+                            fill: { 
+                                    color: 'blue'
+                                 
+                            }
+                        }).on('circle-animation-progress', function (event, progress, stepValue) {
+                            $(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                        }).stop();
+                    }
+                });
+            }
+
+            // Show animated elements
+            animateElements();
+            $(window).scroll(animateElements);
+        });
+    </script>
+</body>
+
+</html>

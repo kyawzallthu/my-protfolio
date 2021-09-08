@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .button {
+            background-color: #099;
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            overflow: hidden;
+            width: auto;
+            max-width: 40px;
+            /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
+            -webkit-transition: max-width 0.5s;
+            transition: max-width 0.5s;
+            position: absolute;
+            right: 50px;
+            bottom: 30px;
+            flex-flow: row-reverse;
+        }
+
+        .button:hover {
+            max-width: 300px;
+        }
+
+        .icon {
+            font-family: "Font Awesome 5 Free";
+            font-size: 16px;
+            margin-right: 5px;
+            padding: 0px 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .text {
+            white-space: nowrap;
+            padding-right: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="#" class="button">
+        <span class="icon">K</span>
+        <span class="text">Hakuna Matata</span> 
+    </a>
+
+</body>
+
+</html>

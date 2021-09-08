@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venobox</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/venobox/venobox.css">
+
+    <script src="vendor/jquery-3.3.1.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/venobox/venobox.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 m-5">
+                <div class="card-columns">
+
+                    <div class="mb-2">
+                        <a class="venobox" data-gall="aa" href="image/two.jpg">
+                            <img src="images/projects/photography1.jpg " class="img-fluid" alt="image alt" />
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="venobox" data-gall="aa" href="image/two.jpg">
+                            <img src="images/projects/photography1.jpg " class="img-fluid" alt="image alt" />
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="venobox" data-gall="aa" href="image/four.jpg">
+                            <img src="images/projects/photography2.jpg" class="img-fluid" alt="image alt" />
+                        </a>
+                    </div>
+
+
+                    <div class="mb-2">
+                        <a class="venobox" data-gall="bb" href="image/FB_IMG_1576844490355.jpg">
+                            <img src="images/projects/photography3.png" class="img-fluid" alt="image alt" />
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="venobox" data-gall="bb" href="image/three.jpg">
+                            <img src="images/projects/photography4.jpg" class="img-fluid" alt="image alt" />
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="venobox" data-gall="bb" href="image/four.jpg">
+                            <img src="images/projects/admindashboard.jpg" class="img-fluid" alt="image alt" />
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+            $(document).ready(function () {
+                $('.venobox').venobox({
+                    framewidth: '400px',                            // default: ''
+                    frameheight: 'auto',                             // default: ''
+                    border: '2px',                              // default: '0'
+                    bgcolor: '#ffffff60',                        // default: '#fff'
+                    titleattr: 'data-title',                       // default: 'title'
+                    numeratio: true,                               // default: false
+                    infinigall: true,                               // default: false
+                    share: ['facebook', 'twitter', 'download'] // default: []
+                });
+            });
+        </script> -->
+
+</body>
+
+</html>
+
+
+<section class="my-portfolio">
+    <div class="container-fluid">
+      <div class="row vh-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mt-5">
+              <h1 class="text-white text-uppercase">My Portfolio</h1>
+            </div>
+            <di class="col-12">
+              <div class="product-nav ml-5">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-white-50" href="#">All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white-50" href="#">Website</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white-50" href="#">Webapp</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white-50" href="#">Others</a>
+                  </li>
+
+                </ul>
+              </div>
+            </di>
+
+            <div class="row ml-5">
+              <div class="col-12">
+
+                <div class="card-columns">
+                  
+                  
+                  <div class="portfolio-modal">
+                    <div class="portfolio-modal-img">
+                      <img src="images/projects/marketing.jpg" class="img-fluid" id="showproject1" class="w-100" alt="">
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="project1" data-backdrop="static" tabindex="-1"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Hello World</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <img src="images/projects/admindashboard.jpg" class="img-fluid" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-modal project2">
+                    <div class="portfolio-modal-img">
+                      <img src="images/projects/photography2.jpg" class="img-fluid" id="show" class="w-100" alt="">
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="aa" data-backdrop="static" tabindex="-1"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Hello World</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body portfolio-edit-img">
+                            <img src="images/projects/photography2.jpg" class="w-100" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

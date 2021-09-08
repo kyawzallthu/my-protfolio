@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Br Progress</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+
+    <style>
+        .wrapper {
+            margin-top: 2400px;
+        }
+
+        .percentage {
+            padding: 20px 0;
+            opacity: 0;
+        }
+
+        .animation {
+            height: 20px;
+            border: 1px solid #cccccc;
+            background: #eeeeee;
+            border-radius: 8px;
+            width: 800px;
+        }
+
+        .animation-bar {
+            height: 20px;
+            width: 0;
+            /* background: #b81010; */
+            position: relative;
+            -webkit-transition: all 0.9s ease-out;
+            transition: all 0.9s ease-out;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(100px);
+            animation: come-in 0.8s ease forwards;
+            -webkit-transition: all 0.9s ease-out;
+            transition: all 0.9s ease-out;
+        }
+
+        .come-in:nth-child(odd) {
+            animation-duration: 1s;
+            /* So they look staggered */
+        }
+
+        @keyframes come-in {
+            to {
+                transform: translateY(0px);
+            }
+        }
+
+        .p85 {
+            width: 85%;
+            border-radius: 8px;
+        }
+
+        .p70 {
+            width: 70%;
+            border-radius: 8px;
+
+        }
+
+        .p65 {
+            border-radius: 8px;
+            width: 65%;
+        }
+
+        .p72 {
+            border-radius: 8px;
+            width: 72%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Scroll down to reveal elements based on scroll position of the window</h1>
+    <div class="wrapper">
+
+
+        <div class="container">
+            <div class="row">
+               
+                    <div class="percentage" data-percentage="85">
+                        <div class="label"></div>
+                        <div class="animation">
+                            <div class="animation-bar bg-primary"></div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+
+        <div class="percentage" data-percentage="70">
+            <div class="label"></div>
+            <div class="animation">
+                <div class="animation-bar bg-warning"></div>
+            </div>
+        </div>
+        <div class="percentage" data-percentage="65">
+            <div class="label"></div>
+            <div class="animation">
+                <div class="animation-bar bg-info"></div>
+            </div>
+        </div>
+        <div class="percentage" data-percentage="72">
+            <div class="label"></div>
+            <div class="animation">
+                <div class="animation-bar bg-danger"></div>
+            </div>
+        </div>
+
+
+        <script src="vendor/bootstrap/js/jquery.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                var Animation = function (animationBar, percentage) {
+
+                    this.animationBar = animationBar;
+                    this.percentage = percentage;
+                    this.animationArray = null;
+                    this.animationOffset = null;
+                    this.labelArray = null;
+                    this.percentageArray = null;
+                    this.index = 0;
+
+                    this.initialize();
+
+                };
+
+                Animation.prototype.initialize = function () {
+
+                    this.animationArray = document.getElementsByClassName(this.percentage);
+
+                    if (this.animationOffset === null)
+                        this.animationOffset = [];
+
+                    if (this.labelArray === null)
+                        this.labelArray = [];
+
+                    if (this.percentageArray === null)
+                        this.percentageArray = [];
+
+                    this.setUpElements();
+
+                };
+
+                Animation.prototype.setUpElements = function () {
+
+                    for (var i = 0; i < this.animationArray.length; i++) {
+                        var elem = this.animationArray[i],
+                            offset = elem.offsetTop + document.getElementsByClassName(this.percentage)[0].clientHeight,
+                            percentage = $(this.animationArray[i]).data(this.percentage);
+
+                        this.animationOffset.push(offset);
+                        this.percentageArray.push(percentage);
+
+
+                        if (percentage == 85) {
+                            $(this.animationArray[i]).find('.label').html('HTML&CSS: ' + percentage + '%');
+                        }
+                        if (percentage == 70) {
+                            $(this.animationArray[i]).find('.label').html('JavaScript: ' + percentage + '%');
+                        }
+                        if (percentage == 65) {
+                            $(this.animationArray[i]).find('.label').html('WordPress: ' + percentage + '%');
+                        }
+                        if (percentage == 72) {
+                            $(this.animationArray[i]).find('.label').html('Java: ' + percentage + '%');
+                        }
+
+
+                    }
+
+                    this.attachListeners();
+                }
+
+                Animation.prototype.attachListeners = function () {
+
+                    $(window).on('scroll', this.onWindowScroll.bind(this));
+                };
+
+                Animation.prototype.onWindowScroll = function () {
+
+                    for (var i = 0; i < this.animationArray.length; i++) {
+                        if (window.pageYOffset >= this.animationOffset[this.index] - window.innerHeight) {
+                            this.showElement();
+                            this.index++;
+                        } else
+                            return;
+                    }
+                };
+
+                Animation.prototype.showElement = function () {
+                    var element = document.getElementsByClassName(this.percentage)[this.index];
+                    element.className += ' show';
+                    this.animateBar(element, this.percentageArray[this.index]);
+                }
+
+                Animation.prototype.animateBar = function (element, width) {
+
+                    var $element = $(element),
+                        className = ' p' + width;
+
+                    $element.find(this.animationBar).addClass(className);
+                }
+
+                new Animation('.animation-bar', 'percentage');
+
+            });
+        </script>
+</body>
+
+</html>
