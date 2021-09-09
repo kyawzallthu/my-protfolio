@@ -440,21 +440,121 @@ button.close span {
     transition: all 0.3s ease-out !important;
   }
 
-  /* modal box */
+  /* portfolio */
 
-.portfolio-edit-img{
-    width: 300px;
-}
-.portfolio-edit-img img{
-    width: 500px !important;
-}
-.project2 .modal-dialog{
-    max-width: 500px !important;
-}
+  .portfolio{
+      background-color: var(--secondary);
+  }
+  .portfoliopicture{
+      margin-left: 90px;
+  }
 
-@media screen and (maxwidth: ) {
-    
+  .portfolio-menu {
+    margin-left: 110px;
+    margin-top: 15px;
 }
 
+.udl{
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
 
+.portfolio-menu ul li {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    padding: 10px 15px;
+    border: 1px solid var(--secondary);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .5 ease;
+    width: 140px;
+    text-align: center;
+}
+
+.portfolio-menu ul {
+    padding: 0;
+}
+
+.portfolio-menu ul li:hover {
+    /* border-color: #eeeeee; */
+    color: var(--gold);
+    background-color: var(--secondary);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 50%) !important;
+}
+
+.portfolio-menu ul li.active {
+    /* border-color: #eeeeee; */
+    color: var(--gold);
+    background-color: var(--secondary);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 50%) !important;;
+}
+
+.portfolio-item {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.portfolio-item .item {
+    width: 33.3%;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.portfolio-item .item div {
+    height: 280px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1024px) {
+    .portfolio-item .item {
+        width: 50%;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .portfolio-item .item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px ) {
+
+    .progressbar{
+        width: unset;
+        margin: 0 0 10px 0 !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .animation{
+        width: 385px;
+    }
+    .portfolio-menu {
+        margin-left: unset;
+        margin-top: unset;
+    }
+    .portfoliopicture {
+        margin-left: unset;
+    }
+    .portfolio-menu ul li{
+        font-size: 10px;
+       width: unset;
+    }
+
+}
+
+/* contact */
+#contactUs{
+    background-color: var(--primary);
+}
+
+#contactUs .social-icons{
+    justify-content: space-evenly;
+}
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        font-family: sans-serif;
+        font-size: 18px;
+        background: #222;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 120%;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .filter-menu {
+        margin-bottom: 20px;
+    }
+
+    .filter-menu li {
+        display: inline-block;
+        padding: 10px 18px;
+        background: #eb4d4b;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .filter-menu li:hover,
+    .filter-menu li.current {
+        background: #ff7979;
+    }
+
+
+
+    .filter-item li {
+        width: 50%;
+        padding: 2px;
+        float: left;
+    }
+
+    .filter-item li.active {
+        width: 50%;
+        padding: 2px;
+        transition: all 0.5s ease;
+    }
+
+    .filter-item li.delete {
+        width: 0%;
+        padding: 0;
+        transition: all 0.5s ease;
+    }
+
+    .filter-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+
+        .filter-item li.active,
+        .filter-item li {
+            width: 33.33%;
+        }
+
+        h2 {
+            font-size: 190%;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+
+        .filter-item li.active,
+        .filter-item li {
+            width: 25%;
+        }
+
+        h2 {
+            font-size: 270%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>Filter images Gallery Using CSS JS</h2>
+
+        <ul class="filter-menu">
+            <li data-target="all">All</li>
+            <li data-target="male">Male</li>
+            <li data-target="female">Female</li>
+            <li data-target="kid">Kid</li>
+        </ul>
+
+        <ul class="filter-item">
+            <li data-item="male"><img
+                    src="https://res.cloudinary.com/seidensticker/image/upload/ar_1:1,c_mfit,w_900,f_auto/production/product/1227/63/1227-63-image-3-5ea8c16216339.jpg"
+                    alt=""></li>
+            <li data-item="male"><img
+                    src="https://media.boohoo.com/i/boohoo/mzz70546_white_xl?$product_image_main_mobile$" alt=""></li>
+            <li data-item="female"><img
+                    src="https://i.pinimg.com/originals/8e/dc/0b/8edc0b484b3c9098181f72746653f63c.jpg" alt=""></li>
+            <li data-item="female"><img
+                    src="https://i.pinimg.com/originals/a3/dd/2c/a3dd2c9d7028a36f89291ac308497cca.jpg" alt=""></li>
+            <li data-item="kid"><img
+                    src="https://media.kasperskydaily.com/wp-content/uploads/sites/36/2020/02/11224850/smartphone-for-kids-featured.jpg"
+                    alt=""></li>
+            <li data-item="kid"><img
+                    src="https://images.ctfassets.net/cnu0m8re1exe/2elnw1rJ0HL8QqPOd3OtH5/c5b25256f2f8c7ba398ef21a2ca6504d/Kid-Thinking.jpg?w=650&h=433&fit=fill"
+                    alt=""></li>
+        </ul>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/jquery.js"></script>
+    <script>
+        let sortBtn = document.querySelector('.filter-menu').children;
+        let sortItem = document.querySelector('.filter-item').children;
+
+        for (let i = 0; i < sortBtn.length; i++) {
+            sortBtn[i].addEventListener('click', function () {
+                for (let j = 0; j < sortBtn.length; j++) {
+                    sortBtn[j].classList.remove('current');
+                }
+
+                this.classList.add('current');
+
+
+                let targetData = this.getAttribute('data-target');
+
+                for (let k = 0; k < sortItem.length; k++) {
+                    sortItem[k].classList.remove('active');
+                    sortItem[k].classList.add('delete');
+
+                    if (sortItem[k].getAttribute('data-item') == targetData || targetData == "all") {
+                        sortItem[k].classList.remove('delete');
+                        sortItem[k].classList.add('active');
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

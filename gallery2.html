@@ -1,0 +1,142 @@
+<html>
+
+<head>
+    <style>
+        .portfolio-menu {
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        .portfolio-menu ul li {
+            display: inline-block;
+            margin: 0;
+            list-style: none;
+            padding: 10px 15px;
+            border: 1px solid #ff0000;
+            cursor: pointer;
+            transition: all .5 ease;
+        }
+
+        .portfolio-menu ul {
+            padding: 0;
+        }
+
+        .portfolio-menu ul li:hover {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        .portfolio-menu ul li.active {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        .portfolio-item {
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .portfolio-item .item {
+            width: 33.3%;
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        .portfolio-item .item div {
+            height: 280px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .portfolio-item .item {
+                width: 50%;
+                padding: 0 15px;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            .portfolio-item .item {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>Filter Image Gallery</h1>
+        <div class="portfolio-menu">
+            <ul>
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".web">Web Design</li>
+                <li data-filter=".seo">Seo</li>
+                <li data-filter=".graphics">Graphics</li>
+            </ul>
+        </div>
+    </div>
+   
+        <div class="portfolio-item">
+            <div class="item web">
+                <img src="images/projects/photography2.jpg" class="img-fluid" alt="">
+            </div>
+
+            <div class="item seo">
+                <img src="images/projects/marketing.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="item graphics">
+                <img src="images/projects/photography2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="item seo">
+                <img src="images/projects/photography3.png" class="img-fluid" alt="">
+            </div>
+            <div class="item web">
+                <img src="images/projects/photography4.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+
+
+    </div>
+    
+
+
+
+
+    <script src="vendor/bootstrap/js/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script> -->
+    <script src="js/isotope.js"></script>
+    <script src="vendor/venobox/venobox.min.js"></script>
+
+
+    <script>
+
+
+        $('.portfolio-item').isotope(function () {
+            itemSelector: '.item'
+        });
+
+        $('.portfolio-menu ul li').click(function () {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+
+
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            })
+            return false;
+        });
+
+        $("#showproject1").click(function () {
+            $("#project1").modal("show");
+        });
+
+    </script>
+</body>
+
+</html>
