@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pagePilling</title>
+
+    <style>
+        #pagapilling {}
+
+        .screen_1 {
+            background: #555;
+            color: #eee;
+        }
+
+        .screen_2 {
+            background: #222;
+            color: #eee;
+        }
+
+        .screen_3 {
+            background: #333;
+            color: #eee;
+        }
+
+        .screen_4 {
+            background: #444;
+            color: #eee;
+        }
+
+        /* Custom pagepilling */
+
+        #pp-nav li .active span {
+            background: #333 !important;
+            border: 1px solid #333 !important;
+        }
+
+        #pp-nav span {
+            background: #eee !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.css">
+</head>
+
+<body>
+    <div id="pagepiling">
+        <div class="section vh-90 bg-danger">First screen</div>
+        <div class="section vh-100 bg-primary">Second screen</div>
+        <div class="section vh-100 bg-warning">Third screen</div>
+        <div class="section vh-100 bg-info">Fourth screen</div>
+        <div class="section vh-100 bg-secondary">five screen</div>
+        <div class="section vh-100 bg-info">Six screen</div>
+
+    </div>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script> -->
+
+    <script src="vendor/bootstrap/js/jquery.js"></script>
+    <script src="js/page-piling.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#pagepiling').pagepiling({
+                menu: null,
+                direction: 'vertical',
+                verticalCentered: false,
+                sectionsColor: [],
+                anchors: [],
+                scrollingSpeed: 700,
+                easing: 'easeOutCubic',
+                loopBottom: false,
+                loopTop: false,
+                css3: true,
+                navigation: {
+                    'textColor': '#fff',
+                    'bulletsColor': '#fff',
+                    'position': 'right',
+                    // 'tooltips': ['section1', 'section2', 'section3', 'section4']
+                    'tooltips':false
+                },
+                normalScrollElements: null,
+                normalScrollElementTouchThreshold: 5,
+                touchSensitivity: 5,
+                keyboardScrolling: true,
+                sectionSelector: '.section',
+                animateAnchor: false,
+                // sectionsColor: ['#333', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                //events
+                onLeave: function (index, nextIndex, direction) { },
+                afterLoad: function (anchorLink, index) { },
+                afterRender: function () { },
+            });
+        });
+    </script>
+
+</body>
+
+</html>

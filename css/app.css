@@ -1,119 +1,150 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+/*------------------------------------------------------------------
+[Common Styles: See "Inputs - Switcher" for code below]
+*/
+.switchBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body {
-  font-family: 'Open Sans', 'sans-serif';
+.switch-icon {
+  font-size: 3rem;
 }
 
-.list-inline {
-  margin: 0;
-  padding: 0;
+.admin-list ul {
   list-style: none;
-}
-
-.list-inline li {
+  background-color: #fafafa;
+  padding: 5px;
   margin: 0;
-  padding: 0 5px;
-  display: inline-block;
-}
-
-.list-inline li a {
-  color: #111;
-  text-decoration: none;
-  text-transform: uppercase;
-  display: inline-block;
-  background-color: #fff;
-  padding: 1rem 2rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.list-inline li a h5 {
-  font-size: .75rem;
-  line-height: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.list-inline li a.active, .list-inline li a:hover {
-  color: pink;
-}
-
-.portfolio-filters {
-  text-align: center;
-  margin: 4rem 0 3rem;
-}
-
-.portfolio {
   width: 100%;
+  border-radius: 4px;
 }
 
-.portfolio-item {
-  float: left;
-  width: 23%;
+.admin-list ul > li {
+  padding: 8px 0;
+  margin: auto;
+}
+
+.admin-list ul > li .switch-button {
+  float: right;
+  margin-left: 5px;
+}
+
+.admin-list ul > li .name {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/*------------------------------------------------------------------
+[Inputs - Switcher]
+*/
+.switch-button {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #b3b3b3;
+  width: 60px;
+  height: 27px;
+  padding: 4px;
   position: relative;
-  margin: 1%;
-}
-
-.portfolio-item .portfolio-image {
-  display: block;
-  position: relative;
-}
-
-.portfolio-item .portfolio-image > img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.portfolio-item > a {
-  display: block;
-}
-
-.portfolio-item > a .project-overlay {
   overflow: hidden;
+  vertical-align: middle;
+}
+
+.switch-button input[type="checkbox"] {
+  display: none;
+}
+
+.switch-button label {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 1px 1px #fff inset;
+  box-shadow: 0 0 1px 1px #FFF inset;
+  background-color: #ffffff;
+  margin: 0;
+  height: 19px;
+  width: 19px;
+  z-index: 1;
+  display: inline-block;
+  cursor: pointer;
+  background-clip: padding-box;
+}
+
+.switch-button label:before {
+  position: absolute;
+  font-size: .8462rem;
+  font-weight: 600;
+  z-index: 0;
+  content: "OFF";
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 27px;
+  top: 0;
+  text-align: right;
+  padding-right: 10px;
+  color: #ffffff;
+}
+
+.switch-button input[type="checkbox"]:checked + span {
+  background-color: #fe669e;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(250, 250, 250, 0.8);
-  color: #040404;
-  text-align: center;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  padding: 4px;
 }
 
-.portfolio-item > a .project-overlay .project-info {
+.switch-button input[type="checkbox"]:checked + span label {
+  float: right;
+  border-color: #fe4d8e;
+}
+
+.switch-button input[type="checkbox"]:checked + span label:before {
   position: absolute;
-  top: 60%;
-  width: 100%;
-  margin-top: 0px;
-  opacity: 0;
+  font-size: .8462rem;
+  font-weight: 600;
+  z-index: 0;
+  content: "ON";
+  color: #ffffff;
+  left: 0;
+  text-align: left;
+  padding-left: 10px;
 }
 
-.portfolio-item > a .project-overlay .project-info .project-name {
-  font-size: 1.5rem;
-  margin: 0 0 .5rem;
+.switch-button.switch-button-yesno label:before {
+  content: "OFF";
 }
 
-.portfolio-item > a .project-overlay .project-info p {
-  color: red;
-  font-size: .85rem;
-  margin: 0 1rem 1rem;
+.switch-button.switch-button-yesno input[type="checkbox"]:checked + span label:before {
+  content: "ON";
 }
 
-.portfolio-item > a:hover .project-overlay {
-  opacity: 1;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+.switch-button.switch-button-lg {
+  height: 30px;
+  width: 63px;
+  line-height: 26px;
+  width: 65px;
 }
 
-.portfolio-item > a:hover .project-overlay .project-info {
-  margin-top: -60px;
-  opacity: 1;
+.switch-button.switch-button-lg label {
+  height: 22px;
+  width: 22px;
+}
+
+.switch-button.switch-button-lg label:before {
+  line-height: 31px;
+}
+
+
+.switch-button.switch-button-danger input[type="checkbox"]:checked + span {
+  background-color: #ea4335;
+}
+
+.switch-button.switch-button-danger input[type="checkbox"]:checked + span label {
+  border-color: #e82e1e;
 }
 /*# sourceMappingURL=app.css.map */

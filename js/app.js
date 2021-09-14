@@ -143,7 +143,7 @@ Animation.prototype.attachListeners = function () {
 Animation.prototype.onWindowScroll = function () {
 
   for (var i = 0; i < this.animationArray.length; i++) {
-    if (window.pageYOffset >= this.animationOffset[this.index] - window.innerHeight) {
+    if (window.pageYOffset >= (this.animationOffset[this.index] + 300) - window.innerHeight) {
       this.showElement();
       this.index++;
     } else
@@ -153,7 +153,7 @@ Animation.prototype.onWindowScroll = function () {
 
 Animation.prototype.showElement = function () {
   var element = document.getElementsByClassName(this.percentage)[this.index];
-  element.className += ' show';
+  element.className += ' showProgressBar';
   this.animateBar(element, this.percentageArray[this.index]);
 }
 
@@ -200,4 +200,65 @@ $('.venobox').venobox({
 });
 
 
+setActiveSection('home');
+function setActiveSection(current) {
+  $(".items").removeClass("current-section");
+  $(`.items[href='#${current}']`).addClass("current-section");
 
+  $(".nav-link").removeClass("nav-link-active");
+  $(`.nav-link[href='#${current}']`).addClass("nav-link-active");
+}
+
+function navScrolling() {
+  let currentSection = $("section[id]");
+  currentSection.waypoint(function (direction) {
+    if (direction == "down") {
+      let currentSectionId = $(this.element).attr('id');
+      console.log(currentSectionId);
+      setActiveSection(currentSectionId);
+    }
+  }, { offset: '100px' });
+
+  currentSection.waypoint(function (direction) {
+    if (direction == 'up') {
+      let currentSectionId = $(this.element).attr('id');
+      console.log(currentSectionId);
+      setActiveSection(currentSectionId);
+    }
+  }, { offset: '-140px' });
+};
+navScrolling();
+
+
+
+//nav menu icon
+$(".navbar-toggler").click(function () {
+  let result = $(".navbar-collapse").hasClass("show");
+  //console.log(result);
+
+  if (result) {
+    $(".menu-icon").removeClass("fa-times").addClass("fa-bars");
+  }
+  else {
+    $(".menu-icon").removeClass("fa-bars").addClass("fa-times");
+  }
+});
+
+$(".nav-item").click(function () {
+  $(".navbar-toggler").click();
+});
+//nav menu icon
+
+// switch button 
+$("#item6").click(function(){
+  console.log("click switch buton");
+  // $(".switch-icon").toggleClass("fa-moon-o");
+  let current = $(".switch-icon").hasClass("fa-sun-o");
+
+  if (current) {
+    $(".switch-icon").removeClass("fa-sun-o").addClass("fa-moon-o light");
+  }
+  else {
+    $(".switch-icon").removeClass("fa-moon-o light").addClass("fa-sun-o");
+  }
+})
