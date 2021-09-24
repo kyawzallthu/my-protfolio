@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            height: 80px;
+            transition: top 250ms ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .header ul {
+            margin: 20px;
+            padding: 0;
+        }
+
+        .header ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .header ul li:last-child {
+            margin-right: 0;
+        }
+
+        .hide {
+            top: -80px;
+        }
+
+        .stage {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: bisque;
+            font-size: 48px;
+        }
+
+        .stage-0 {
+            background: black;
+        }
+
+        .stage-1 {
+            background: #030202;
+        }
+
+        .stage-2 {
+            background: #060505;
+        }
+
+        .stage-3 {
+            background: #080707;
+        }
+
+        .stage-4 {
+            background: #0b0a09;
+        }
+
+        .stage-5 {
+            background: #0e0c0b;
+        }
+
+        .stage-6 {
+            background: #110e0e;
+        }
+
+        .stage-7 {
+            background: #141110;
+        }
+
+        .stage-8 {
+            background: #161312;
+        }
+
+        .stage-9 {
+            background: #191515;
+        }
+
+        .stage-10 {
+            background: #1c1817;
+        }
+
+        .stage-11 {
+            background: #1f1a19;
+        }
+
+        .stage-12 {
+            background: #221d1c;
+        }
+
+        .stage-13 {
+            background: #241f1e;
+        }
+
+        .stage-14 {
+            background: #272120;
+        }
+
+        .stage-15 {
+            background: #2a2422;
+        }
+
+        .stage-16 {
+            background: #2d2625;
+        }
+
+        .stage-17 {
+            background: #302827;
+        }
+
+        .stage-18 {
+            background: #322b29;
+        }
+
+        .stage-19 {
+            background: #352d2c;
+        }
+
+        .stage-20 {
+            background: #38302e;
+        }
+
+        .stage-21 {
+            background: #3b3230;
+        }
+
+        .stage-22 {
+            background: #3e3432;
+        }
+
+        .stage-23 {
+            background: #413735;
+        }
+
+        .stage-24 {
+            background: #433937;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="header">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="stage stage-0">1</div>
+    <div class="stage stage-2">3</div>
+    <div class="stage stage-4">5</div>
+    <div class="stage stage-6">7</div>
+    <div class="stage stage-8">9</div>
+    <div class="stage stage-10">11</div>
+    <div class="stage stage-12">13</div>
+    <div class="stage stage-14">15</div>
+    <div class="stage stage-16">17</div>
+    <div class="stage stage-18">19</div>
+    <div class="stage stage-20">21</div>
+    <div class="stage stage-22">23</div>
+
+    <script src="vendor/bootstrap/js/jquery.js"></script>
+
+    <script>
+        var lastFixPos = 0,
+            threshold = 100, //sensitivity on scrolling
+            $header = $('.header');
+
+        $(window).on('scroll', function () {
+            var st = $(this).scrollTop();
+            var diff = Math.abs($(window).scrollTop() - lastFixPos);
+
+            if (diff > threshold || st < 100) {
+                if (st < lastFixPos) {
+                    // scroll up
+                    // $header.removeClass('hide');
+                }
+                lastFixPos = st;
+            } else if (st > lastFixPos) {
+                //scroll down 
+                // $header.addClass('hide');
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

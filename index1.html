@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<div class=" loader-container">
+  <div class="loader">Loading...</div>
+</div>
+<html lang="en">
+
+<head>
+
+  <style>
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: 2000;
+    }
+
+    .loader {
+      color: #cd3545;
+      font-size: 90px;
+      text-indent: -9999em;
+      overflow: hidden;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      margin: 72px auto;
+      position: relative;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+      animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    }
+
+    @-webkit-keyframes load6 {
+      0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+
+      5%,
+      95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+
+      10%,
+      59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+      }
+
+      20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+      }
+
+      38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+      }
+
+      100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+    }
+
+    @keyframes load6 {
+      0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+
+      5%,
+      95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+
+      10%,
+      59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+      }
+
+      20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+      }
+
+      38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+      }
+
+      100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+    }
+
+    @-webkit-keyframes round {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes round {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- HTML Meta Tags -->
+   <title>My Portfolio</title>
+   <meta name="description" content="SWD-7 Student Portfolio Project.">
+   <meta name="keywords" content="kyawzall, kyaw, zall, web developer, web class" />
+   <meta name="author" content="MMSIt SWD-7 Student." />
+   
+   
+   <!-- Facebook Meta Tags -->
+   <meta property="og:url" content="https://kyawzallthu.000webhostapp.com/">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="Student Portfolio Project.">
+   <meta property="og:description" content="SWD-7 Student Portfolio Project.">
+   <meta property="og:image" content="https://kyawzallthu.000webhostapp.com/preview.png">
+   
+   <!-- Twitter Meta Tags -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta property="twitter:domain" content="kyawzallthu.000webhostapp.com/">
+   <meta property="twitter:url" content="https://kyawzallthu.000webhostapp.com/">
+   <meta name="twitter:title" content="Student Project.">
+   <meta name="twitter:description" content="SWD-7 Student Portfolio Project.">
+   <meta name="twitter:image" content="https://kyawzallthu.000webhostapp.com/preview.png">
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+  <link rel="shortcut icon" href="logo.ico">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="vendor/fontawsome/font-awesome.css">
+  <link rel="stylesheet" href="vendor/venobox/venobox.css">
+  <link rel="stylesheet" href="vendor/animate_it/animate.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-12 p-0">
+
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-light justify-content-between">
+          <div class="container p-md-2">
+            <div class="myLogo d-flex animate__animated animate__slideInDown">
+              <img src="images/logo/logo1.png" class="logoImg" alt="">
+              <p class="dot">.</p>
+              <span class="dot-text text-white">zt</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars menu-icon"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#service">Service</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contactUs">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="side-menu-position d-none d-lg-block animate__animated animate__fadeInLeft ani-delay-1">
+    <div class="side-menu side-menu1">
+      <a href="#home" class="items mb-3 text-white">
+        <i class="fa fa-home icon"></i>
+        <span class="text">home</span>
+      </a>
+    </div>
+    <div class="side-menu side-menu2">
+      <a href="#about" class="items mb-3 text-white">
+        <i class="fa fa-info icon"></i>
+        <span class="text">about</span>
+      </a>
+    </div>
+    <div class="side-menu side-menu3">
+      <a href="#service" class="items mb-3 text-white">
+        <i class="fa fa-briefcase icon"></i>
+        <span class="text">service</span>
+      </a>
+    </div>
+    <div class="side-menu side-menu4">
+      <a href="#portfolio" class="items mb-3 text-white">
+        <i class="fa fa-product-hunt icon"></i>
+        <span class="text">Portfolio</span>
+      </a>
+    </div>
+    <div class="side-menu side-menu5">
+      <a href="#contactUs" class="items mb-3 text-white">
+        <i class="fa fa-envelope icon"></i>
+        <span class="text">Contact</span>
+      </a>
+    </div>
+  </div>
+
+  <section class="home container-fluid" id="home">
+    <div class="row">
+
+      <div class="container">
+        <div class="row min-vh-100 home-item">
+
+          <div class="social-media d-none d-lg-block animate__animated animate__slideInDown">
+            <a href="#" class="social-media-light-icon mr-2" style="--index: 1;--alpha-l: 0.125; --alpha-u: 0.25;">
+              <i class="icon fa fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-media-light-icon mr-2" style="--index: 2;--alpha-l: 0.125; --alpha-u: 0.25;">
+              <i class="icon fa fa-twitter"></i>
+            </a>
+            <a href="#" class="social-media-light-icon mr-2" style="--index: 3;--alpha-l: 0.125; --alpha-u: 0.25;">
+              <i class="icon fa fa-github"></i>
+            </a>
+            <a href="#" class="social-media-light-icon mr-2" style="--index: 4;--alpha-l: 0.125; --alpha-u: 0.25;">
+              <i class="icon fa fa-google"></i>
+            </a>
+            <div href="#" class="social-media-light-icon ml-2 mr-3" style="--index: 5;">
+              <!-- <i class="icon fa fa-long-arrow-right"></i> -->
+              <span class=" text-white-50">+959982561832</span>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 intro-text">
+            <p class="text-white-50 animate__animated animate__fadeIn ani-delay-1">Hello...</p>
+            <div class="d-flex animate__animated animate__zoomIn ani-delay-2">
+              <h1 class="font-weight-bolder text-white mb-4 mr-2">I'm</h1>
+              <h2 class="text-danger pt-2">Kyaw Zall Thu</h2>
+            </div>
+            <p class=" text-white-50 mb-4 animate__animated animate__fadeIn ani-delay-3">i,m Kyawzall, Web developer
+              with HTML, CSS, Bootstrap, JavaScript and
+              JQuery...​
+            </p>
+            <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+            <div class="button animate__animated animate__zoomInDown ani-delay-4">
+              <a href="#">
+                seemore
+                <span class="shift">›</span>
+              </a>
+              <div class="mask"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-5">
+            <div class="animate__animated animate__zoomIn ani-delay-2">
+              <img src="images/me-about.png" class="me-img w-75" alt="">
+            </div>
+
+          </div>
+
+          <div class="date animate__animated animate__slideInUp ani-delay-3">
+            <span class="text-white-50">2021</span>
+            <div class="date-l"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about container-fluid" id="about">
+    <div class="row">
+      <div class="container">
+        <div class="row pb-3">
+          <div class="col-12">
+            <div class="about-text my-4 text-left">
+              <h2 class="text-white mb-2 wow animate__animated animate__zoomInDown">About Me</h2>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-12 col-md-6">
+                <div class="water-mark wow animate__animated animate__rotateIn ani-delay-1">
+                  <div style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;">a</div>
+                  <div style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;">b</div>
+                  <div style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;">o</div>
+                  <div style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;">u</div>
+                  <div style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;">t</div>
+                </div>
+                <div
+                  class="d-flex justify-content-center about-me wow animate__animated animate__slideInLeft ani-delay-1">
+                  <img src="images/aboutme.png" alt="">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="">
+                  <h2 class="text-white my-4 wow animate__animated animate__slideInDown ani-delay-1">Hi There</h2>
+                  <p class=" text-white-50 wow animate__animated animate__slideInDown ani-delay-2">
+                    Hello! My name is Kyaw Zall Thu 3rd years student studies at University of Computer Studies
+                    Maubin
+                    (UCSMUB).
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="col-6 pr-0">
+                    <div class=" wow animate__animated animate__zoomIn ani-delay-3">
+                      <h5 class="about-info-text">Name :</h5>
+                      <p class="text-white-50">Kyaw Zall Thu</p>
+                    </div>
+                  </div>
+                  <div class="col-6 pl-0 ">
+                    <div class="wow animate__animated animate__zoomIn ani-delay-3">
+                      <h5 class="about-info-text">Email :</h5>
+                      <p class="text-white-50">kyawzall@gmail.com</p>
+                    </div>
+                  </div>
+                  <div class="col-6 pr-0">
+                    <div class="wow animate__animated animate__zoomIn ani-delay-3">
+                      <h5 class="about-info-text">Work :</h5>
+                      <p class="text-white-50">web developer</p>
+                    </div>
+                  </div>
+                  <div class="col-6 pl-0 ">
+                    <div class="wow animate__animated animate__zoomIn ani-delay-3">
+                      <h5 class="about-info-text">Address :</h5>
+                      <p class="text-white-50">Myanmar, Yangon</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-skill row">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="skill">
+              <h2 class="text-white my-4 wow animate__animated animate__slideInLeft">My Skills</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- progress bar -->
+        <div class="row" id="skill">
+          <div class="col-6 col-md-3">
+            <div class="progressbar" data-animate="false">
+              <div class="circle text-white blue" data-percent="85">
+                <div></div>
+                <p class="text-white mt-4">HTML&CSS</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="progressbar" data-animate="false">
+              <div class="circle text-white gold" data-percent="55">
+                <div></div>
+                <p class="text-white mt-4">JavaScript</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="progressbar" data-animate="false">
+              <div class="circle text-white wordpress" data-percent="65">
+                <div></div>
+                <p class="text-white mt-4">WordPress</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="progressbar" data-animate="false">
+              <div class="circle text-white java" data-percent="70">
+                <div></div>
+                <p class="text-white mt-4">UI/UX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- progress bar -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="">
+              <p class="text-white-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, distinctio adipisci. Cupiditate omnis
+                aliquid quasi molestiae ipsam fugiat eum, tempore, enim voluptatem eos laborum aspernatur, error odit!
+                Placeat, vitae illo!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bar progress -->
+        <div class="d-block d-md-flex text-white">
+          <div class="container">
+            <div class="row">
+              <div class="percentage" data-percentage="85">
+                <div class="label"></div>
+                <div class="animation">
+                  <div class="animation-bar bg-primary"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="percentage" data-percentage="55">
+                <div class="label"></div>
+                <div class="animation">
+                  <div class="animation-bar bg-warning"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-block d-md-flex text-white mb-5">
+          <div class="container">
+            <div class="row">
+              <div class="percentage" data-percentage="60">
+                <div class="label"></div>
+                <div class="animation">
+                  <div class="animation-bar bg-info"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="percentage" data-percentage="70">
+                <div class="label"></div>
+                <div class="animation">
+                  <div class="animation-bar bg-danger"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bar progress -->
+      </div>
+    </div>
+  </section>
+
+  <section class="service container-fluid " id="service">
+    <div class="row min-vh-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="service-header py-2 my-4">
+              <h2 class="text-white wow animate__animated animate__flipInX">Avabilable Services</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 mb-5 phone-service">
+            <div class="card wow animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+              <div class="image">
+                <img src="images/webdevelopment4.png" alt="">
+              </div>
+              <h5 class="text-white py-4 text-center">Web Development</h5>
+              <div class="details">
+                <h4 class="py-3 text-white text-center">Web Design</h4>
+                <div class="center">
+                  <p class=" text-white-50 text-center">Lorem ipsum is simple dummy text on the printing and
+                    typesetting
+                    industry.</p>
+                  <ul class="pt-5">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+
+                <div class="service-card-btn text-right">
+                  <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+                  <div class="button service-button">
+                    <a href="#">
+                      seemore
+                      <span class="shift">›</span>
+                    </a>
+                    <div class="mask"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5 phone-service">
+            <div class="card wow animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+              <div class="image">
+                <img src="images/software3-removebg-preview.png" alt="">
+              </div>
+              <h5 class="text-white py-4 text-center">Softwre Development</h5>
+              <div class="details">
+                <h4 class="py-3 text-white text-center">Softwre Development</h4>
+                <div class="center">
+                  <p class=" text-white-50 text-center">Lorem ipsum is simple dummy text on the printing and
+                    typesetting
+                    industry.</p>
+                  <ul class="pt-5">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+
+                <div class="service-card-btn text-right">
+                  <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+                  <div class="button service-button">
+                    <a href="#">
+                      seemore
+                      <span class="shift">›</span>
+                    </a>
+                    <div class="mask"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5 phone-service">
+            <div class="card wow animate__animated animate__fadeIn" style="animation-delay: 0.6s;">
+              <div class="image">
+                <img src="images/customer3-removebg-preview.png" alt="">
+              </div>
+              <h5 class="text-white py-4 text-center">Customer Support</h5>
+              <div class="details">
+                <h4 class="py-3 text-white text-center">Customer Service</h4>
+                <div class="center">
+                  <p class=" text-white-50 text-center">Lorem ipsum is simple dummy text on the printing and
+                    typesetting
+                    industry.</p>
+                  <ul class="pt-5">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+
+                <div class="service-card-btn text-right">
+                  <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+                  <div class="button service-button">
+                    <a href="#">
+                      seemore
+                      <span class="shift">›</span>
+                    </a>
+                    <div class="mask"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5 phone-service">
+            <div class="card wow animate__animated animate__fadeIn" style="animation-delay: 0.8s;">
+              <div class="image">
+                <img src="images/product-removebg-preview.png" alt="">
+              </div>
+              <h5 class="text-white py-4 text-center">Product Management</h5>
+              <div class="details">
+                <h4 class="py-3 text-white text-center">Product Management</h4>
+                <div class="center">
+                  <p class=" text-white-50 text-center">Lorem ipsum is simple dummy text on the printing and
+                    typesetting
+                    industry.</p>
+                  <ul class="pt-5">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+
+                <div class="service-card-btn text-right">
+                  <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+                  <div class="button service-button">
+                    <a href="#">
+                      seemore
+                      <span class="shift">›</span>
+                    </a>
+                    <div class="mask"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5 phone-service">
+            <div class="card wow animate__animated animate__fadeIn" style="animation-delay: 1s;">
+              <div class="image">
+                <img src="images/marketing3-removebg.png" alt="">
+              </div>
+              <h5 class="text-white py-4 text-center">Marketing & Communication</h5>
+              <div class="details">
+                <h4 class="py-3 text-white text-center">Marketing & Communication</h4>
+                <div class="center">
+                  <p class=" text-white-50 text-center">Lorem ipsum is simple dummy text on the printing and
+                    typesetting
+                    industry.</p>
+                  <ul class="pt-5">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+
+                <div class="service-card-btn text-right">
+                  <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+                  <div class="button service-button">
+                    <a href="#">
+                      seemore
+                      <span class="shift">›</span>
+                    </a>
+                    <div class="mask"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5 phone-service">
+            <div class="card wow animate__animated animate__fadeIn" style="animation-delay: 1.2s;">
+              <div class="image">
+                <img src="images/ui-ux2.png" alt="">
+              </div>
+              <h5 class="text-white py-4 text-center">UI&UX Design</h5>
+              <div class="details">
+                <h4 class="py-3 text-white text-center">UI&UX Design</h4>
+                <div class="center">
+                  <p class=" text-white-50 text-center">Lorem ipsum is simple dummy text on the printing and
+                    typesetting
+                    industry.</p>
+                  <ul class="pt-5">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+
+                <div class="service-card-btn text-right">
+                  <!-- <a href="#" class="btn btn-primary">Seemore <i class="fa fa-arrow-right"></i> </a> -->
+                  <div class="button service-button">
+                    <a href="#">
+                      seemore
+                      <span class="shift">›</span>
+                    </a>
+                    <div class="mask"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="portfolio container-fluid " id="portfolio">
+    <div class="row min-vh-100">
+      <div class="container">
+        <div class="row"> 
+          <div class="col-12">
+            <h2 class="d-inline-block mt-4 text-white wow animate__animated animate__zoomIn">My Portfolio</h2>
+            <div class="ph-water-mark water-mark wow animate__animated animate__rotateIn ani-delay-1">
+              <div style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;">p</div>
+              <div style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;">o</div>
+              <div style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;">r</div>
+              <div style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;">t</div>
+              <div style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;">f</div>
+              <div style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;">o</div>
+              <div style="--index: 6; --alpha-l: 0.125; --alpha-u: 0.25;">l</div>
+              <div style="--index: 7; --alpha-l: 0.125; --alpha-u: 0.25;">i</div>
+              <div style="--index: 8; --alpha-l: 0.125; --alpha-u: 0.25;">o</div>
+            </div>
+            <div class="portfolio-menu wow animate__animated animate__fadeInDown ani-delay-1">
+              <ul class="text-white">
+                <li class="active navhover" data-filter="*">All</li>
+                <li data-filter=".web" class="navhover">Web Design</li>
+                <li data-filter=".photo" class="navhover">Photography</li>
+                <li data-filter=".graphics" class="navhover">Graphics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfoliopicture">
+          <div class="portfolio-item">
+            <div class="item web">
+              <a class="venobox" data-gall="all" href="images/projects/marketing.jpg">
+                <img src="images/projects/marketing.jpg" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:0.7s ;" alt="image alt" />
+              </a>
+            </div>
+
+            <div class="item photo">
+              <a class="venobox" data-gall="all" href="images/projects/photography3.png">
+                <img src="images/projects/photography3.png" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:0.8s ;" alt="image alt" />
+              </a>
+            </div>
+
+            <div class="item web">
+              <a class="venobox" data-gall="all" href="images/projects/exChgange.jpg">
+                <img src="images/projects/exChgange.jpg" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:1.1s ;" alt="image alt" />
+              </a>
+            </div>
+
+            <div class="item photo">
+              <a class="venobox" data-gall="all" href="images/projects/photography5.jpg">
+                <img src="images/projects/photography5.jpg" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:0.9s ;" alt="image alt" />
+              </a>
+            </div>
+
+            <div class="item photo">
+              <a class="venobox" data-gall="all" href="images/projects/choungthar.jpg">
+                <img src="images/projects/choungthar.jpg" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:1s ;" alt="image alt" />
+              </a>
+            </div>
+
+            <div class="item web">
+              <a class="venobox" data-gall="all" href="images/projects/admindashboard.jpg">
+                <img src="images/projects/admindashboard.jpg" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:1.1s ;" alt="image alt" />
+              </a>
+            </div>
+
+            <div class="item graphics">
+              <a class="venobox" data-gall="all" href="images/projects/photography3.png">
+                <img src="images/projects/photography3.png" class="img-fluid wow animate__animated animate__zoomIn"
+                  style="animation-delay:1.2s ;" alt="image alt" />
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contactUs" class="container-fluid contact">
+    <div class="row">
+      <div class="container">
+        <div class="row py-5">
+          <divl class="col-12 mr-1">
+            <div class="mb-5 mb-md-my-5 text-center">
+              <p class="text-secondary wow animate__animated animate__zoomInDown">Contact Us</p>
+              <h4
+                class="text-uppercase font-weight-bolder text-white wow animate__animated animate__zoomIn ani-delay-1">
+                Get in Touch with Us...</h4>
+            </div>
+          </divl>
+          <div class="col-12 col-md-6">
+            <form action="#">
+              <div class="form-group">
+                <input type="text" class="form-control wow animate__animated animate__rotateInDownLeft ani-delay-2"
+                  name="" id="" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control wow animate__animated animate__rotateInDownLeft ani-delay-2"
+                  name="" id="" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <textarea type="text" class="form-control wow animate__animated animate__rotateInDownLeft ani-delay-2"
+                  rows="5" name="" id="" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <!-- <button class="btn btn-primary">Submit</button> -->
+                <div class="button wow animate__animated animate__zoomInDown ani-delay-3">
+                  <a href="#">
+                    Submit
+                    <span class="shift">›</span>
+                  </a>
+                  <div class="mask"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 col-md-6 wow animate__animated animate__zoomIn ani-delay-3">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488797.79020234646!2d95.90136958313799!3d16.83960980011405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1949e223e196b%3A0x56fbd271f8080bb4!2sYangon!5e0!3m2!1sen!2smm!4v1628649078700!5m2!1sen!2smm"
+              width="100%" height="290" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <div class="col-12 mt-4 mb-n4">
+            <div class=" d-flex flex-column flex-md-row justify-content-between">
+              <span class="text-white-50"> @ Copyright Hello World. All Right Reversed.</span>
+              <span class="text-white-50">Designed by Kyaw Zall Thu </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="vendor/bootstrap/js/jquery.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script src="js/progressbar.js"></script>
+  <script src="js/isotope.js"></script>
+  <script src="vendor/venobox/venobox.min.js"></script>
+  <script src="vendor/way_point/jquery.waypoints.js"></script>
+  <script src="vendor/wow/wow.js"></script>
+  <script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

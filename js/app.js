@@ -1,4 +1,5 @@
 console.log("Hello World!");
+
 $(document).ready(function ($) {
   function animateElements() {
     $('.progressbar').each(function () {
@@ -119,14 +120,14 @@ Animation.prototype.setUpElements = function () {
     if (percentage == 85) {
       $(this.animationArray[i]).find('.label').html('HTML&CSS: ' + percentage + '%');
     }
-    if (percentage == 70) {
+    if (percentage == 55) {
       $(this.animationArray[i]).find('.label').html('JavaScript: ' + percentage + '%');
     }
-    if (percentage == 65) {
+    if (percentage == 60) {
       $(this.animationArray[i]).find('.label').html('WordPress: ' + percentage + '%');
     }
-    if (percentage == 72) {
-      $(this.animationArray[i]).find('.label').html('Java: ' + percentage + '%');
+    if (percentage == 70) {
+      $(this.animationArray[i]).find('.label').html('UI/UX: ' + percentage + '%');
     }
 
 
@@ -143,7 +144,7 @@ Animation.prototype.attachListeners = function () {
 Animation.prototype.onWindowScroll = function () {
 
   for (var i = 0; i < this.animationArray.length; i++) {
-    if (window.pageYOffset >= (this.animationOffset[this.index] + 300) - window.innerHeight) {
+    if (window.pageYOffset >= (this.animationOffset[this.index] + 150) - window.innerHeight) {
       this.showElement();
       this.index++;
     } else
@@ -202,11 +203,13 @@ $('.venobox').venobox({
 
 setActiveSection('home');
 function setActiveSection(current) {
+
   $(".items").removeClass("current-section");
   $(`.items[href='#${current}']`).addClass("current-section");
 
   $(".nav-link").removeClass("nav-link-active");
   $(`.nav-link[href='#${current}']`).addClass("nav-link-active");
+
 }
 
 function navScrolling() {
@@ -230,7 +233,6 @@ function navScrolling() {
 navScrolling();
 
 
-
 //nav menu icon
 $(".navbar-toggler").click(function () {
   let result = $(".navbar-collapse").hasClass("show");
@@ -249,16 +251,32 @@ $(".nav-item").click(function () {
 });
 //nav menu icon
 
-// switch button 
-$("#item6").click(function(){
-  console.log("click switch buton");
-  // $(".switch-icon").toggleClass("fa-moon-o");
-  let current = $(".switch-icon").hasClass("fa-sun-o");
+new WOW().init();
 
-  if (current) {
-    $(".switch-icon").removeClass("fa-sun-o").addClass("fa-moon-o light");
+// loading
+$(window).on("load", function () {
+  $('.loader-container').fadeOut(500, function () {
+    $(this).remove();
+  });
+});
+
+var lastFixPos = 0,
+  threshold = 100, //sensitivity on scrolling
+  $header = $('header');
+
+$(window).on('scroll', function () {
+  var st = $(this).scrollTop();
+  var diff = Math.abs($(window).scrollTop() - lastFixPos);
+
+  if (diff > threshold || st < 100) {
+    if (st < lastFixPos) {
+      // scroll up
+      $header.removeClass('hide');
+    }
+    lastFixPos = st;
+  } else if (st > lastFixPos) {
+    //scroll down 
+    $header.addClass('hide');
   }
-  else {
-    $(".switch-icon").removeClass("fa-moon-o light").addClass("fa-sun-o");
-  }
-})
+
+});

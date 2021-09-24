@@ -12,10 +12,7 @@
 }
 
 html{
-    scroll-behavior: smooth !important;
-}
-body{
-    scroll-behavior: smooth !important;
+    scroll-behavior: smooth;
 }
 
 .home{
@@ -109,10 +106,6 @@ body{
     user-select: none;
 }
 
-#contactBtn{
-    width: 190px !important;
-}
-
 .button a {
     color: #ffff;
     text-decoration: none;
@@ -172,12 +165,13 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .date{
     position: absolute;
-    bottom: 10px;
-    left: 90px;
+    bottom: 10px !important;
+    left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -722,16 +716,16 @@ body{
 
 @media screen and (max-width: 576px ) {
 
-    .home{
-        background-position: 1px bottom;
-        background-size: 125%;
-        position: relative;
-    }
     .card{
         animation-delay: unset !important;
     }
-    .portfoliopicture img{
-        animation-delay: unset !important;
+
+    .home{
+        background-position: 1px bottom;
+        background-size: 125%;
+    }
+    .navbar{
+        padding: 0 5px;
     }
 
     .me-img {
@@ -739,16 +733,16 @@ body{
     }
     .social-media{
         position: absolute !important;
-        top: 90px !important;
+        top: 90px;
     }
     .date{
         right: 0px;
         left: unset !important;
-        bottom: 5px !important;
+        /* bottom: -140px !important; */
     }
 
     .intro-text{
-        margin-top: 85px;
+        margin-top: 65px;
     }
     .myName{
         margin: 100px !important;
@@ -789,7 +783,7 @@ body{
 
 @media screen and (max-width:768px){
     .social-media{
-        top: 100px !important;
+        top: 70px !important;
     }
 
     header{
